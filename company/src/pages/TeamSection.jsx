@@ -1,33 +1,70 @@
-
 const TeamSection = () => {
   return (
- <>
-            <style>{`
-                @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-            
-                * {
-                    font-family: "Poppins", sans-serif;
-                }
-            `}</style>
-            <div className='px-4 py-20 '>
-                <div
-                    className='w-full max-w-5xl bg-linear-to-b from-violet-100 to-[#FFE8E9] rounded-3xl px-6 pt-20 md:p-18 mx-auto flex flex-col md:flex-row justify-between items-center md:items-center relative overflow-hidden'>
-            
-                    <div className='flex-1 px-2 md:pl-5 mb-8 md:mb-0 md:mt-4 text-center md:text-left'>
-                        <h1 className='text-3xl md:text-4xl/12 font-medium text-gray-900 text-balance'>Meet the team Shaping the
-                            future.</h1>
-                        <p className='text-sm/6 text-gray-700 max-w-full md:max-w-sm mt-3 mx-auto md:mx-0'>Our diverse team of
-                            engineers and designers are dedicated to building AI agents that simplify work and empower businesses.
-                        </p>
-                        <button className='bg-white hover:bg-gray-50 px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm text-gray-700 mt-6 md:mt-8 cursor-pointer'>Join our team</button>
-                    </div>
-            
-                    <div className='shrink-0 md:-mr-18 -mb-6 md:-mb-23 md:mt-4 w-full md:w-auto'>
-                        <img className='w-full md:w-[490px] h-auto rounded-tr-3xl md:rounded-tr-none rounded-br-none md:rounded-br-3xl rounded-bl-none' src='https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/team/team-meeting-image.png' alt="meeting image" />
-                    </div>
-                </div>
-            </div>
-        </>  )
-}
+    <div className="px-4 py-28">
 
-export default TeamSection
+      <div className="w-full max-w-6xl mx-auto relative overflow-hidden rounded-3xl border border-white/10 bg-[#0C0414]">
+
+        {/* soft SaaS ambient glow (signature background feel) */}
+        <div className="absolute inset-0">
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-violet-600/20 blur-[140px]" />
+          <div className="absolute bottom-[-120px] right-[-100px] w-[500px] h-[300px] bg-pink-500/10 blur-[120px]" />
+        </div>
+
+        <div className="relative flex flex-col md:flex-row items-center justify-between gap-12 px-8 md:px-16 py-20">
+
+          {/* TEXT */}
+          <div className="flex-1 text-center md:text-left">
+
+            <p className="text-xs tracking-[0.25em] uppercase text-white/40">
+              Building modern software systems
+            </p>
+
+            <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight max-w-xl">
+              A small, focused team building high-performance digital products.
+            </h2>
+
+            <p className="mt-5 text-sm md:text-base text-white/50 max-w-lg leading-relaxed">
+              We design and engineer web and mobile platforms for startups and companies
+              that expect reliability, speed, and long-term scalability.
+            </p>
+
+            <div className="flex gap-4 mt-8 justify-center md:justify-start">
+              <button className="bg-white text-black px-6 py-3 rounded-full text-sm hover:bg-white/90 transition">
+                Work with us
+              </button>
+
+              <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-full text-sm hover:bg-white/10 transition">
+                Careers
+              </button>
+            </div>
+          </div>
+
+          {/* IMAGE */}
+          <div className="flex-1 relative">
+
+            {/* subtle image glow */}
+            <div className="absolute -inset-10 bg-gradient-to-tr from-violet-500/20 via-transparent to-pink-500/10 blur-3xl" />
+
+            <img
+              src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/team/team-meeting-image.png"
+              alt="team"
+              className="relative w-full max-w-[520px] mx-auto rounded-2xl shadow-2xl border border-white/10"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+        </div>
+      </div>
+      <div className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[300px]">
+        <div className="w-full h-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-indigo-500 blur-[120px] opacity-30 animate-pulse" />
+      </div>
+
+      {/* FLOATING ENERGY LINE (subtle motion identity) */}
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[60%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    </div>
+    
+  );
+};
+
+export default TeamSection;

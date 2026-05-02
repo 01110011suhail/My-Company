@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
-const WorldMapSection = () => {
+import { useRef } from "react";
+
+const AboutSection = () => {
   const aboutRef = useRef(null);
 
   const scrollToAbout = () => {
@@ -7,166 +8,135 @@ const WorldMapSection = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen bg-[#060912] text-white">
+    <div className="w-screen bg-[#05060A] text-white">
 
-      {/* ================= WORLD MAP SECTION ================= */}
-      <div className="w-screen min-h-screen flex items-center justify-center relative overflow-hidden px-6">
+      {/* ================= HERO ================= */}
+      <section className="min-h-screen flex items-center px-6">
 
-        {/* 🌍 WORLD MAP BACKGROUND */}
-        <div className="absolute inset-0 opacity-30">
-          <svg viewBox="0 0 1200 600" className="w-full h-full object-cover" fill="none">
-            <path d="M200,300 C250,150 400,120 500,200 C600,280 650,100 800,180 C950,260 1000,200 1100,250"
-              stroke="#1e3a8a" strokeWidth="2" />
+        <div className="max-w-5xl mx-auto">
 
-            <path d="M150,400 C300,350 400,500 550,420 C700,340 850,520 1000,400"
-              stroke="#1d4ed8" strokeWidth="2" />
-
-            <path d="M250,200 C350,300 450,180 550,250 C650,320 750,220 850,300"
-              stroke="#2563eb" strokeWidth="2" />
-          </svg>
-        </div>
-
-        {/* 🌐 CONNECTION LINES */}
-        <svg className="absolute inset-0 w-full h-full">
-          <line x1="20%" y1="40%" x2="70%" y2="30%" stroke="#60a5fa" strokeWidth="1.5" strokeDasharray="6" />
-          <line x1="30%" y1="60%" x2="80%" y2="50%" stroke="#818cf8" strokeWidth="1.5" strokeDasharray="6" />
-          <line x1="15%" y1="30%" x2="60%" y2="70%" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="6" />
-        </svg>
-
-        {/* 📍 NODES */}
-        <div className="absolute w-3 h-3 bg-blue-400 rounded-full top-[35%] left-[20%] animate-ping" />
-        <div className="absolute w-3 h-3 bg-indigo-400 rounded-full top-[30%] left-[70%] animate-ping" />
-        <div className="absolute w-3 h-3 bg-sky-400 rounded-full top-[60%] left-[40%] animate-ping" />
-        <div className="absolute w-3 h-3 bg-purple-400 rounded-full top-[50%] left-[80%] animate-ping" />
-
-        {/* 🧠 CONTENT */}
-        <div className="relative z-10 w-[80%] max-md:w-full text-center">
-
-          <h2 className="text-3xl md:text-5xl font-bold">
-            Global Network Infrastructure
-          </h2>
-
-          <div className="w-40 h-[3px] bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto my-6" />
-
-          <p className="text-slate-300 max-w-3xl mx-auto text-sm md:text-base">
-            Our systems operate across continents with real-time data flow,
-            connecting engineering hubs, cloud infrastructure, and enterprise
-            clients worldwide.
+          <p className="text-xs tracking-[0.4em] uppercase text-white/40">
+            Global Technology & Advisory
           </p>
 
-          {/* 📊 STATS */}
-          <div className="grid grid-cols-3 gap-8 mt-12">
+          <h1 className="mt-8 text-4xl md:text-6xl font-light leading-[1.1] tracking-tight">
+            We design and deliver systems that power modern enterprises.
+          </h1>
+
+          <p className="mt-8 text-white/50 text-sm md:text-base leading-relaxed max-w-2xl">
+            A focused engineering organization building secure, scalable, and resilient digital platforms
+            for global enterprises operating at high complexity.
+          </p>
+
+          <div className="mt-12 flex items-center gap-10 text-sm text-white/50">
 
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold">5</h3>
-              <p className="text-xs text-slate-400">Global Hubs</p>
+              <p className="text-white text-lg font-light">30+</p>
+              <p className="text-xs text-white/40 mt-1">Countries</p>
             </div>
 
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold">99.9%</h3>
-              <p className="text-xs text-slate-400">Uptime</p>
+              <p className="text-white text-lg font-light">100+</p>
+              <p className="text-xs text-white/40 mt-1">Enterprise Systems</p>
             </div>
 
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold">24/7</h3>
-              <p className="text-xs text-slate-400">Monitoring</p>
+              <p className="text-white text-lg font-light">24/7</p>
+              <p className="text-xs text-white/40 mt-1">Global Coverage</p>
             </div>
 
           </div>
 
-          {/* 🔘 VIEW MORE BUTTON */}
           <button
             onClick={scrollToAbout}
-            className="mt-12 px-6 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-full font-semibold"
+            className="mt-14 text-sm text-white border-b border-white/30 hover:border-white transition"
           >
-            View More
+            Explore our capabilities
           </button>
 
         </div>
-      </div>
 
-      {/* ================= ABOUT SECTION ================= */}
-      <div ref={aboutRef} className="w-full py-24 px-6 bg-[#05070f]">
+      </section>
 
-        <div className="max-w-6xl mx-auto space-y-20">
+      {/* ================= ABOUT ================= */}
+      <section ref={aboutRef} className="py-28 px-6 bg-[#04060A]">
 
-          {/* 🧑‍💼 CEO MESSAGE */}
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">CEO Message</h2>
-            <p className="text-slate-300 max-w-3xl mx-auto">
-              “We are building a global ecosystem where technology connects
-              people, systems, and intelligence seamlessly. Our mission is to
-              empower enterprises with scalable, secure, and intelligent
-              infrastructure.”
+        <div className="max-w-5xl mx-auto space-y-24">
+
+          {/* PRINCIPLE */}
+          <div>
+
+            <p className="text-xs tracking-[0.4em] uppercase text-white/40">
+              Approach
             </p>
-            <p className="mt-4 text-blue-400 font-semibold">— CEO, Company Name</p>
-          </div>
 
-          {/* 🚀 WHAT WE DO */}
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <h2 className="mt-6 text-3xl md:text-4xl font-light leading-tight">
+              Engineering clarity into complex enterprise systems.
+            </h2>
 
-            <div>
-              <h3 className="text-3xl font-bold mb-4">What We Do</h3>
-              <p className="text-slate-300 leading-relaxed">
-                We design and operate high-performance digital infrastructure,
-                cloud systems, and AI-powered platforms that help businesses
-                scale globally. From real-time analytics to secure enterprise
-                networks, we deliver end-to-end solutions.
-              </p>
-            </div>
-
-            <div className="bg-blue-900/20 p-8 rounded-xl border border-blue-800">
-              <ul className="space-y-3 text-slate-200">
-                <li>✔ Cloud Infrastructure Solutions</li>
-                <li>✔ AI & Data Engineering</li>
-                <li>✔ Enterprise Security Systems</li>
-                <li>✔ Global Network Architecture</li>
-              </ul>
-            </div>
-
-          </div>
-
-          {/* 🌟 VISION */}
-          <div className="text-center">
-            <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
-            <p className="text-slate-300 max-w-3xl mx-auto">
-              To become a world-leading technology infrastructure company that
-              powers the digital transformation of every industry through
-              innovation, reliability, and intelligence.
+            <p className="mt-6 text-white/50 leading-relaxed max-w-2xl">
+              We operate at the intersection of design, systems engineering, and large-scale infrastructure,
+              focusing on long-term stability rather than short-term iteration cycles.
             </p>
+
           </div>
 
-          {/* 🏢 COMPANY / SERVICES STYLE SECTION */}
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* CAPABILITIES (EDITORIAL LIST STYLE) */}
+          <div className="space-y-10">
 
-            <div className="p-6 bg-[#0b1020] rounded-xl border border-slate-800">
-              <h4 className="font-bold text-xl mb-2">Engineering</h4>
-              <p className="text-slate-400 text-sm">
-                Building scalable backend systems and distributed architectures.
+            <div className="border-t border-white/10 pt-8">
+              <h3 className="text-lg font-light">Enterprise Architecture</h3>
+              <p className="text-white/50 text-sm mt-2 max-w-2xl">
+                Distributed systems designed for resilience, performance, and predictable scaling under enterprise workloads.
               </p>
             </div>
 
-            <div className="p-6 bg-[#0b1020] rounded-xl border border-slate-800">
-              <h4 className="font-bold text-xl mb-2">Cloud & AI</h4>
-              <p className="text-slate-400 text-sm">
-                AI-driven solutions and cloud-native platforms for modern enterprises.
+            <div className="border-t border-white/10 pt-8">
+              <h3 className="text-lg font-light">Cloud Infrastructure</h3>
+              <p className="text-white/50 text-sm mt-2 max-w-2xl">
+                Multi-region cloud systems across AWS, Azure, and hybrid environments with high availability design patterns.
               </p>
             </div>
 
-            <div className="p-6 bg-[#0b1020] rounded-xl border border-slate-800">
-              <h4 className="font-bold text-xl mb-2">Security</h4>
-              <p className="text-slate-400 text-sm">
-                Enterprise-grade security systems protecting global infrastructure.
+            <div className="border-t border-white/10 pt-8">
+              <h3 className="text-lg font-light">AI & Data Systems</h3>
+              <p className="text-white/50 text-sm mt-2 max-w-2xl">
+                Enterprise-grade AI pipelines, data infrastructure, and automation systems integrated into core business workflows.
               </p>
             </div>
+
+          </div>
+
+          {/* INDUSTRY FOOTPRINT */}
+          <div className="border-t border-white/10 pt-10">
+
+            <p className="text-xs tracking-[0.4em] uppercase text-white/40 mb-6">
+              Industry Coverage
+            </p>
+
+            <p className="text-white/50 text-sm leading-relaxed max-w-3xl">
+              Financial services, healthcare systems, industrial manufacturing, retail platforms,
+              telecommunications infrastructure, and public sector technology ecosystems.
+            </p>
 
           </div>
 
         </div>
+        
+
+      </section>
+
+      {/* SIGNATURE VISUAL (this is what was missing) */}
+      <div className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[300px]">
+        <div className="w-full h-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-indigo-500 blur-[120px] opacity-30 animate-pulse" />
       </div>
 
-    </div>
+      {/* FLOATING ENERGY LINE (subtle motion identity) */}
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[60%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+    </div>    
+    
   );
 };
 
-export default WorldMapSection;
+export default AboutSection;

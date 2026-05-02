@@ -1,53 +1,56 @@
 import Navbar from "../components/Navbar";
+import HeroSection from "./HeroSection";
+import AboutSection from "./AboutSection";
 import TeamSection from "./TeamSection";
 import Testimonal from "./Testimonal";
-import PromotionBnr from "./PromotionBnr";
-import Owner from "./Owner";
-import AboutSection from "./AboutSection";
 import FaqSection from "./FaqSection";
 import Footer from "../components/Footer";
+import Owner from "./Owner";
+
+
 
 const Home = () => {
   return (
-    <div className="w-full overflow-x-hidden bg-white">
+    <div className="bg-gray-900 text-white overflow-x-hidden">
 
-      {/* NAVBAR (hero can stay full height if needed) */}
-      <section className="w-full min-h-screen">
+      {/* NAVBAR */}
+      <div className="fixed top-0 left-0 w-full z-50">
         <Navbar />
+      </div>
+
+      {/* HERO */}
+      <section id="home" className="min-h-screen">
+        <HeroSection />
       </section>
 
-      {/* TEAM */}
-      <section className="w-full py-24">
-        <TeamSection />
-      </section>
-
-      {/* TESTIMONIAL */}
-      <section className="w-full py-24 bg-slate-50">
-        <Testimonal />
-      </section>
-
-      {/* PROMOTION */}
-      <section className="w-full py-24">
-        <PromotionBnr />
-      </section>
-
-      {/* OWNER */}
-      <section className="w-full py-24 bg-slate-50">
-        <Owner />
-      </section>
 
       {/* ABOUT */}
-      <section className="w-full py-24">
+      <section id="about" className="relative">
         <AboutSection />
       </section>
 
+
+      {/* TEAM */}
+      <section id="team" className="relative">
+        <TeamSection />
+      </section>
+
+
+
+      {/* TESTIMONIALS (slight overlap feel) */}
+      <section id="testimonials" >
+        <Testimonal />
+      </section>
+
       {/* FAQ */}
-      <section className="w-full py-24 bg-white">
+
+      <section id="faq">
         <FaqSection />
       </section>
-<section className="w-full">
-  <Footer />
-</section>
+
+      {/* FOOTER (soft fade out instead of hard cut) */}
+      <div className="h-24 bg-gradient-to-b from-black to-gray-950" />
+      <Footer />
     </div>
   );
 };

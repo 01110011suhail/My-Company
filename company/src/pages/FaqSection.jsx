@@ -7,114 +7,129 @@ const FaqSection = () => {
     {
       question: "What does your company specialize in?",
       answer:
-        "We specialize in building scalable digital infrastructure, cloud-native platforms, and AI-driven enterprise solutions that help businesses operate globally with high reliability and performance."
+        "We design and build full-scale digital products including web applications, SaaS platforms, internal tools, and AI-driven systems. Our focus is performance, scalability, and long-term product stability — not just UI delivery."
     },
     {
       question: "Is your platform suitable for enterprise use?",
       answer:
-        "Yes. Our systems are designed for enterprise-grade workloads with high availability, strong security layers, and global scalability across distributed environments."
+        "Yes. Our architecture is built for enterprise-grade systems with high availability, distributed scaling, and strong fault tolerance."
     },
     {
-      question: "How secure is your infrastructure?",
+      question: "How do you ensure security and compliance?",
       answer:
-        "We implement multi-layer security including encryption at rest and in transit, role-based access control, continuous monitoring, and compliance-ready architecture for enterprise standards."
+        "We implement layered security across infrastructure, application, and data levels with encryption, access control, and continuous monitoring."
     },
     {
-      question: "Can your solutions scale with business growth?",
+      question: "Can your systems scale with business growth?",
       answer:
-        "Absolutely. Our architecture is built on cloud-native principles, allowing seamless horizontal scaling, load balancing, and real-time performance optimization as your business grows."
+        "Yes. Our cloud-native architecture supports seamless scaling from early-stage products to high-traffic global systems."
     },
     {
-      question: "Do you provide 24/7 support?",
+      question: "Do you provide ongoing support?",
       answer:
-        "Yes. Our engineering and support teams operate 24/7 across multiple regions to ensure continuous monitoring, rapid incident response, and uninterrupted service delivery."
+        "We provide continuous monitoring, updates, and system optimization across production environments."
     }
   ];
 
   return (
-    <>
-      {/* Global Font */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        * { font-family: 'Poppins', sans-serif; }
-      `}</style>
+    <section className="w-full py-28 bg-[#060912] text-white px-4 relative overflow-hidden">
 
-      <section className="w-full py-20 bg-gradient-to-b from-white to-slate-50 px-4">
-        
-        {/* HEADER */}
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-sm font-medium text-indigo-600 tracking-wide uppercase">
-            Support & Information
-          </p>
+      {/* background glow system */}
+      <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-indigo-500/10 blur-[160px]" />
+      <div className="absolute bottom-[-200px] right-[-100px] w-[600px] h-[400px] bg-pink-500/10 blur-[140px]" />
 
-          <h1 className="text-3xl md:text-4xl font-semibold mt-2 text-slate-900">
-            Frequently Asked Questions
-          </h1>
+      {/* HEADER */}
+      <div className="text-center max-w-3xl mx-auto">
+        <p className="text-xs tracking-[0.35em] uppercase text-white/40">
+          Documentation
+        </p>
 
-          <p className="text-sm text-slate-500 mt-4 leading-relaxed">
-            Everything you need to know about our platform, infrastructure,
-            security, and enterprise solutions — all in one place.
-          </p>
-        </div>
+        <h2 className="text-4xl md:text-5xl font-light mt-5">
+          Built for clarity at scale
+        </h2>
 
-        {/* FAQ CONTAINER */}
-        <div className="max-w-3xl mx-auto mt-10 space-y-4">
+        <p className="text-white/50 mt-6 text-sm md:text-base">
+          Everything you need to understand how our systems are designed, built, and operated.
+        </p>
+      </div>
 
-          {faqsData.map((faq, index) => (
+      {/* FAQ */}
+      <div className="max-w-4xl mx-auto mt-16 space-y-4">
+
+        {faqsData.map((faq, index) => {
+          const isOpen = openIndex === index;
+
+          return (
             <div
               key={index}
-              className="border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300"
+              className={`relative rounded-2xl transition-all duration-300 border
+              ${isOpen
+                ? "border-indigo-500/40 bg-white/[0.05]"
+                : "border-white/10 bg-white/[0.02]"
+              } backdrop-blur-xl`}
             >
-              
+
+              {/* glow line when active */}
+              {isOpen && (
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/10 via-transparent to-pink-500/10 blur-xl opacity-60" />
+              )}
+
               {/* QUESTION */}
               <button
                 onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
+                  setOpenIndex(isOpen ? null : index)
                 }
-                className="w-full flex items-center justify-between p-5 text-left"
+                className="relative w-full flex items-center justify-between p-6 text-left group"
               >
-                <span className="text-sm md:text-base font-medium text-slate-800">
+
+                <span className="text-base md:text-lg font-light text-white/90">
                   {faq.question}
                 </span>
 
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  className={`transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                >
-                  <path
-                    d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
-                    stroke="#4F46E5"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                {/* 🔥 upgraded interaction indicator */}
+                <div className="relative flex items-center justify-center">
+
+                  <div
+                    className={`w-7 h-7 rounded-full border transition-all duration-300
+                    ${isOpen
+                      ? "border-indigo-400 scale-110"
+                      : "border-white/20 group-hover:border-white/40"
+                    }`}
                   />
-                </svg>
+
+                  <div
+                    className={`absolute w-2 h-2 rounded-full transition-all duration-300
+                    ${isOpen ? "bg-indigo-400 scale-125" : "bg-white/40"}`}
+                  />
+
+                </div>
+
               </button>
 
               {/* ANSWER */}
               <div
-                className={`px-5 overflow-hidden transition-all duration-500 ease-in-out ${
-                  openIndex === index
-                    ? "max-h-40 pb-5 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`relative px-6 overflow-hidden transition-all duration-500 ease-in-out
+                ${isOpen ? "max-h-60 pb-6 opacity-100" : "max-h-0 opacity-0"}`}
               >
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-white/60 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>
 
             </div>
-          ))}
+          );
+        })}
 
-        </div>
-      </section>
-    </>
+      </div>
+      <div className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[300px]">
+        <div className="w-full h-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-indigo-500 blur-[120px] opacity-30 animate-pulse" />
+      </div>
+
+      {/* FLOATING ENERGY LINE (subtle motion identity) */}
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[60%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    </section>
+    
+    
   );
 };
 
